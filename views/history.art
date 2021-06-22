@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <title>Document</title>
+    <script src="http://localhost/js/jquery.min.js"></script>
+    <style>
+        .container {
+            height: 700px;
+        }
+
+        .history {
+            opacity: .5;
+        }
+
+        .title {
+            width: 100px;
+            height: 50px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .table tr {
+            cursor: pointer;
+        }
+
+        .header {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            font-size: 24px;
+            font-weight: 600;
+            padding-left: 30px;
+            border-bottom: 1px solid #409eff;
+            color: #4052b6;
+        }
+
+        .mes {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .cul {
+            float: right;
+            margin: 20px 0;
+        }
+
+        footer {
+            height: 90px;
+            background: #2a2d34;
+            text-align: center;
+        }
+
+        footer p {
+            line-height: 30px;
+            color: #959588;
+            margin: 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">校园报修管理系统</div>
+        <div class="mes">维修申请状态及历史</div>
+        <div class="cul">查询到<span style="color: #d3cbb7;">&nbsp;{{length}}&nbsp;</span>条记录</div>
+        <table class="table table-hover">
+            {{each informations}}
+            {{if $value.adminflag!=2}}
+            <tr>
+                <td>申请人:&nbsp;&nbsp;&nbsp;{{$value.name}}</td>
+                <td>申请人学号:&nbsp;&nbsp;&nbsp;{{$value.userid}}</td>
+                <td>申请人楼宇宿舍:&nbsp;&nbsp;&nbsp;{{$value.dorm}}</td>
+                <td>时间：&nbsp;&nbsp;{{$value.infordate}}</td>
+                {{if $value.adminflag==0}}
+                <td>状态:&nbsp;&nbsp;&nbsp;已申请</td>
+                {{else if $value.adminflag==1}}
+                <td>状态:&nbsp;&nbsp;&nbsp;申请通过，等待处理</td>
+                {{/if}}
+                <td style="color:red">点击查看详情</td>
+            </tr>
+            {{/if}}
+            {{/each}}
+        </table>
+        <div class="title">
+            <span>历史申请</span>
+        </div>
+        <div class="history">
+            <table class="table table-hover">
+                {{each informations}}
+                {{if $value.adminflag==2}}
+                <tr>
+                    <td>申请人:&nbsp;&nbsp;&nbsp;{{$value.name}}</td>
+                    <td>申请人学号:&nbsp;&nbsp;&nbsp;{{$value.userid}}</td>
+                    <td>申请人楼宇宿舍:&nbsp;&nbsp;&nbsp;{{$value.dorm}}</td>
+                    <td>时间：&nbsp;&nbsp;{{$value.infordate}}</td>
+                    <td>状态:&nbsp;&nbsp;&nbsp;已处理</td>
+                    <td style="color:red">点击查看详情</td>
+                </tr>
+                {{/if}}
+                {{/each}}
+            </table>
+        </div>
+    </div>
+    <footer>
+        <p>珠海科技学院 榕园5栋 638宿舍所有权</p>
+        <p>2021-2022</p>
+        <p>联系电话:13697749577</p>
+    </footer>
+</body>
+<script>
+    $('tr').on('click', function (e) {
+        var userid = e.target.parentNode.children[1].innerText.split(':')[1].trim();
+        var time = e.target.parentNode.children[3].innerText.split('：')[1].trim();
+        window.location = `http://localhost/user/historymes?time=${time}&userid=${userid}`
+        // var formdata = new FormData();
+        // formdata.append('time', time);
+        // var xhr = new XMLHttpRequest();
+        // xhr.open('post', 'http://localhost/user/usermessage');
+        // xhr.send(formdata);
+        // xhr.onload = function () {
+        //     console.log(xhr.responseText)
+        // }
+    })
+</script>
+
+</html>

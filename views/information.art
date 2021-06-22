@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            .title {
+            background-color: #409eff;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            font-size: 22px;
+            font-weight: 800;
+        }
+        .container {
+            width: 80%;
+            background-color: #fdfafa;
+            margin: 0 auto;
+        }
+
+        input {
+            vertical-align: middle;
+        }
+
+        .inform {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .inform span {
+            width: 300px;
+            height: 20px;
+            margin: 20px 0;
+        }
+
+        .wrong {
+            display: flex;
+            justify-content: center;
+        }
+
+        .fault {
+            width: 50%;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0;
+            padding: 0 20px;
+            justify-content: space-around;
+            box-sizing: border-box;
+        }
+
+        .lit {
+            width: 50%;
+            height: 520px;
+            display: none;
+            flex-direction: column;
+            margin: 20px 0;
+            padding: 0 20px;
+            justify-content: space-around;
+            box-sizing: border-box;
+        }
+
+        #log {
+            color: red;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            resize: none;
+        }
+
+        .normal {
+            display: block;
+            width: 100px;
+            height: 30px;
+            margin: 10px auto;
+        }
+                footer {
+            height: 90px;
+            background: #2a2d34;
+            text-align: center;
+        }
+
+        footer p {
+            line-height: 30px;
+            color: #959588;
+            margin: 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <span>报修申请内容</span>
+    </div>
+    <form id="form">
+        <div class="container">
+            <div class="inform">
+                <span id="userid">申请人学号/工号:&nbsp;&nbsp;{{userid}}</span>
+                <span id="name">申请人姓名:&nbsp;&nbsp;{{name}}</span>
+                <span id="phonenumber">联系方式:&nbsp;&nbsp;{{phonenumber}} </span>
+                <span><span id="log">*</span>申请人楼宇宿舍:&nbsp;&nbsp;<input type="text" placeholder="如:榕5-638-1"
+                        name="dorm"></span>
+            </div>
+            <div class="wrong">
+                <span class="fault">
+                    <span><span id="log">*</span>&nbsp;&nbsp;维修项目:</span>
+                    <span><label><input type="radio" value="日常类" name="projects" id="p1" checked>日常类</label></span>
+                    <span><label><input type="radio" value="网络类" name="projects" id="p2">网络类</label></span>
+                    <span><label><input type="radio" value="饮水类" name="projects" id="p3">饮水类</label></span>
+                    <span><label><input type="radio" value="消防类" name="projects" id="p4">消防类</label></span>
+                    <span><label><input type="radio" value="空调类" name="projects" id="p5">空调类</label></span>
+                    <span><label><input type="radio" value="窗帘" name="projects" id="p6">窗帘</label></span>
+                    <span><label><input type="radio" value="热水类" name="projects" id="p7">热水类</label></span>
+                    <span><span id="log">*</span>上传故障照片<br>
+                        <input type="file" id="file">
+                    </span>
+                    <span id="box"></span>
+                    <span>
+                        <span id="log">*</span>故障描述
+                        <textarea name="detial"></textarea>
+                    </span>
+                </span>
+                <span class="lit" id="daly">
+                    <span><span id="log">*</span>&nbsp;&nbsp;小类:</span>
+                    <label><input type="radio" value="灯具" name="littles">灯具</label>
+                    <label><input type="radio" value="风扇" name="littles">风扇</label>
+                    <label><input type="radio" value="床铺" name="littles">床铺</label>
+                    <label><input type="radio" value="衣柜" name="littles">衣柜</label>
+                    <label><input type="radio" value="洗手台" name="littles">洗手台</label>
+                    <label><input type="radio" value="阳台晾衣杆" name="littles">阳台晾衣杆</label>
+                    <label><input type="radio" value="水龙头" name="littles">水龙头</label>
+                    <label><input type="radio" value="锁具" name="littles">锁具</label>
+                    <label><input type="radio" value="其他" name="littles">其他</label>
+                </span>
+                <span class="lit" id="net">
+                    <span><span id="log">*</span>&nbsp;&nbsp;小类:</span>
+                    <label><input type="radio" value="错误代码691" name="littles"> 错误代码691</label>
+                    <label><input type="radio" value="错误代码123" name="littles"> 错误代码123</label>
+                    <label><input type="radio" value="错误代码628" name="littles"> 错误代码628</label>
+                    <label><input type="radio" value="网络端口错误" name="littles"> 网络端口错误</label>
+                    <label><input type="radio" value="其他" name="littles"> 其他</label>
+                </span>
+                <span class="lit" id="water">
+                    <span><span id="log">*</span>&nbsp;&nbsp;小类:</span>
+                    <label><input type="radio" value="饮水机漏水" name="littles">饮水机漏水</label>
+                    <label><input type="radio" value="饮水机机体破裂" name="littles"> 饮水机机体破裂</label>
+                    <label><input type="radio" value="饮水机电源开关失灵" name="littles"> 饮水机电源开关失灵</label>
+                    <label><input type="radio" value="其他" name="littles"> 其他</label>
+                </span>
+                <span class="lit" id="fire">
+                    <span><span id="log">*</span>&nbsp;&nbsp;小类:</span>
+                    <label><input type="radio" value="消火栓" name="littles"> 消火栓</label>
+                    <label><input type="radio" value="消防类其他问题" name="littles"> 消防类其他问题</label>
+                </span>
+                <span class="lit" id="air">
+                    <span><span id="log">*</span>&nbsp;&nbsp;小类:</span>
+                    <label><input type="radio" value="无法启动" name="littles"> 无法启动</label>
+                    <label><input type="radio" value="不制冷" name="littles"> 不制冷</label>
+                    <label><input type="radio" value="空调其他故障" name="littles"> 空调其他故障</label>
+                </span>
+                <span class="lit" id="window">
+                    <span><span id="log">*</span>&nbsp;&nbsp;小类:</span>
+                    <label><input type="radio" value="窗帘问题" name="littles"> 窗帘问题</label>
+                </span>
+                <span class="lit" id="hot">
+                    <span><span id="log">*</span>&nbsp;&nbsp;小类:</span>
+                    <label><input type="radio" value="热水端出冷水，前后宿舍都一样" name="littles"> 热水端出冷水，前后宿舍都一样</label>
+                    <label><input type="radio" value="热水端出冷水，但前后宿舍有热水" name="littles"> 热水端出冷水，但前后宿舍有热水</label>
+                    <label><input type="radio" value="热水管漏水" name="littles"> 热水管漏水</label>
+                    <label><input type="radio" value="热水其他问题" name="littles"> 热水其他问题</label>
+                </span>
+            </div>
+            <input type="button" value="提交申请" class="normal">
+        </div>
+    </form>
+    <footer>
+        <p>珠海科技学院 榕园5栋 638宿舍所有权</p>
+        <p>2021-2022</p>
+        <p>联系电话:13697749577</p>
+    </footer>
+</body>
+<script src="http://localhost/js/jquery.min.js"></script>
+<script src="http://localhost/js/formdate.js"></script>
+<script src="http://localhost/js/information.js"></script>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            ;
+        }
+
+        .container {
+            width: 80%;
+            height: 700px;
+            margin: 0 auto;
+            background-color: #fdfafa;
+        }
+
+        .show {
+            height: 500px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .mes {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .header {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            font-size: 24px;
+            font-weight: 600;
+            padding-left: 30px;
+            border-bottom: 1px solid #409eff;
+            color: #4052b6;
+        }
+
+        .userinform {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .faultmes {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .faultmes img {
+            width: 270px;
+            height: 150px;
+        }
+
+        .operation {
+            width: 100px;
+            height: 50px;
+            margin: 10px auto;
+            background-color: #4052b6;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 8px;
+        }
+
+        .operation:hover {
+            background-color: #2994ff;
+            cursor: pointer;
+        }
+
+        footer {
+            height: 90px;
+            background: #2a2d34;
+            text-align: center;
+        }
+
+        footer p {
+            line-height: 30px;
+            color: #959588;
+            margin: 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">校园报修管理系统</div>
+        <div class="mes">维修系统通知消息</div>
+        <div class="show">
+            <span class="userinform">
+                <span>申请人学号:&nbsp;&nbsp;<span id="userid">{{param.userid}}</span></span>
+                <span>申请人姓名:&nbsp;&nbsp;{{param.name}}</span>
+                <span>联系电话:&nbsp;&nbsp;{{param.phoneNumber}}</span>
+                <span>申请人楼宇宿舍:&nbsp;&nbsp;{{param.dorm}}</span>
+                <span>申请时间:&nbsp;&nbsp;<sapn id="time">{{param.infordate}}</sapn></span>
+            </span>
+            <span class="faultmes">
+                <span>故障内容:&nbsp;&nbsp;{{param.projects}}——{{param.littles}}</span>
+                <span>故障照片:&nbsp;&nbsp;</span>
+                <span>
+                    <img src={{param.imgpath}} alt="">
+                </span>
+                <span>故障描述:</span>
+                <span>
+                    <p>{{param.detial}}</p>
+                </span>
+            </span>
+        </div>
+    </div>
+    <div class="operation">已处理</div>
+    <footer>
+        <p>珠海科技学院 榕园5栋 638宿舍所有权</p>
+        <p>2021-2022</p>
+        <p>联系电话:13697749577</p>
+    </footer>
+</body>
+<script>
+    var opt = document.querySelector('.operation');
+    opt.addEventListener('click', function () {
+        var time = document.querySelector("#time").innerText
+        var userid = document.querySelector("#userid").innerText
+        var formdata = new FormData();
+        formdata.append('time', time);
+        formdata.append('userid', userid);
+        var xhr = new XMLHttpRequest();
+        xhr.open('post', 'http://localhost/handle/changeadminflagdone');
+        xhr.send(formdata);
+        xhr.onload = function () {
+            if (xhr.status == 200) {
+                if (xhr.responseText == 'ok') {
+                    window.location = "http://localhost/user/adminhistory"
+                }
+            }
+        }
+    })
+</script>
+
+</html>

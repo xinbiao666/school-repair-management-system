@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="http://localhost/img/logo.icon.ico" type="image/x-icon" />
+    <title>校园报修管理系统</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <p>珠海科技学院报修管理系统</p>
+    </div>
+
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="http://localhost/img/logo.png" alt=""></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="javascript:;">首页</a></li>
+                        <li><a href="javascript:;">报修服务</a></li>
+                        <li><a href="javascript:;">个人信息</a></li>
+                        <li id="moveto"><a href="javascript:;" >通知公告</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="javascript:;" id="login">登录</a></li>
+                        <li class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">用户 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:;">消息</a></li>
+                                <li><a href="javascript:;">历史记录</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="javascript:;">退出登录</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <div id="id01" class="modal">
+            <!---该div作为登录表单--->
+            <form class="modal-content animate" id="form">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                        title="Close Modal">&times;</span>
+                </div>
+
+                <div class="contain message">
+                    <label><b>学号/工号</b></label>
+                    <input type="text" placeholder="请输入学号/工号" name="userid" required>
+
+                    <label><b>密码</b></label>
+                    <input type="password" placeholder="请输入密码" name="password" required>
+
+                    <button id="submit">登陆</button>
+                </div>
+
+                <div class="contain" style="background-color:#f1f1f1">
+                    <button type="button" class="cancelbtn">取消</button>
+                    <span class="psw"><a href="javascript:;">更多...</a></span>
+                </div>
+            </form>
+        </div>
+
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="http://localhost/img/focus3.jpg" alt="...">
+                </div>
+                <div class="item">
+                    <img src="http://localhost/img/focus2.jpg" alt="...">
+                </div>
+                <div class="item">
+                    <img src="http://localhost/img/focus1.jpg" alt="...">
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+        </div>
+        <div class="title">通知公告</div>
+        <div class="row" id="target">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="http://localhost/img/inform.jpg" alt="...">
+                    <div class="caption">
+                        <h3>欢迎使用校园报修管理系统</h3>
+                        <p>各位老师、同学：
+                            大家好！
+                            我校报修管理系统已经开通，欢迎各位老师、同学积极应用网络平台开展教学活动。
+                            网络教学综合平台是为师生开展网络辅助教学服务的支撑平台，该系统支持教师与学生进行网上互动式教学活动，它能向学生提供网络辅助学习支持功能，如浏览所选课程相应的课程辅导材料，进行网上提问、在线测试、讨论式学习等等；它能向教师提供网上教学支持功能，如发布选课课程信息、布置作业、制作课件、网上答疑、在线测试、讨论式学习、并永久保留各项网上学习痕迹和各项统计消息等等从而拓展教学空间，扩大师生视野。
+                            欢迎大家开展网络教学活动，尽享信息化教学的乐趣！</p>
+                        <p><a href="http://localhost/home/inform" class="btn btn-primary" role="button">查看详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>珠海科技学院 榕园5栋 638宿舍所有权</p>
+        <p>2021-2022</p>
+        <p>联系电话:13697749577</p>
+    </footer>
+
+</body>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="http://localhost/css/index.css">
+<script src="http://localhost/js/jquery.min.js"></script>
+<script src="http://localhost/js/bootstrap.min.js"></script>
+<script src="http://localhost/js/index.js"></script>
+<script src="http://localhost/js/scroll.js"></script>
+<script>
+    var form = document.querySelector('#form');
+    $('#submit').on('click', function () {
+        if ($('input[name="userid"]').val() == '' && $('input[name="password"]').val() == '') {
+            alert('请输入账号或密码!');
+        } else {
+            var formdata = new FormData(form);
+            var xhr = new XMLHttpRequest();
+            xhr.open('post', 'http://localhost/handle/loginUser');
+            xhr.send(formdata);
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    if (xhr.responseText == 'ok0') {
+                        alert('登录成功!');
+                        window.location.replace('http://localhost/user/userindex');
+                    } else if (xhr.responseText == 'ok1') {
+                        alert('登录成功!');
+                        window.location.replace('http://localhost/user/maintainindex');
+                    }else if(xhr.responseText=='fal'){
+                        alert('账号或密码错误！');
+                    }
+                }
+            }
+        }
+    })
+</script>
+
+</html>

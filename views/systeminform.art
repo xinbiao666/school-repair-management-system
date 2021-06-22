@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            font-size: 24px;
+            font-weight: 600;
+            padding-left: 30px;
+            border-bottom: 1px solid #409eff;
+            color: #4052b6;
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin: 0 auto;
+            width: 80%;
+            background-color: #fdfafa;
+            height: 700px;
+        }
+
+        .title {
+            height: 40px;
+            width: 100%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 26px;
+            margin: 15px 0;
+        }
+
+        .author {
+            width: 100%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 10px;
+        }
+
+        .artical p {
+            margin: 10px 0;
+        }
+
+        .artical {
+            width: 90%;
+            height: 400px;
+            background-color: #fff;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        footer {
+            height: 90px;
+            background: #2a2d34;
+            text-align: center;
+        }
+
+        footer p {
+            line-height: 30px;
+            color: #959588;
+            margin: 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">校园报修管理系统</div>
+        <div class="title">欢迎使用校园报修管理系统</div>
+        <div class="author">
+            发布人:&nbsp;&nbsp;<span>系统管理员</span>&nbsp;&nbsp;&nbsp;&nbsp;发布时间:&nbsp;&nbsp;<span>2021-6-6</span></div>
+        <div class="artical">
+            <p>各位老师、同学：</p>
+            <p>大家好！</p>
+            <p>我校网络教学综合平台系统已经开通，欢迎各位老师、同学积极应用网络平台开展教学活动。</p>
+            <p>网络教学综合平台是为师生开展网络辅助教学服务的支撑平台，该系统支持教师与学生进行网上互动式教学活动，它能向学生提供网络辅助学习支持功能，如浏览所选课程相应的课程辅导材料，进行网上提问、在线测试、讨论式学习等等；它能向教师提供网上教学支持功能，如发布选课课程信息、布置作业、制作课件、网上答疑、在线测试、讨论式学习、并永久保留各项网上学习痕迹和各项统计消息等等从而拓展教学空间，扩大师生视野。
+            </p>
+            <p>欢迎大家开展网络教学活动，尽享信息化教学的乐趣！</p>
+        </div>
+    </div>
+    <footer>
+        <p>珠海科技学院 榕园5栋 638宿舍所有权</p>
+        <p>2021-2022</p>
+        <p>联系电话:13697749577</p>
+    </footer>
+</body>
+
+</html>

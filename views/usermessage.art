@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            font-size: 24px;
+            font-weight: 600;
+            padding-left: 30px;
+            border-bottom: 1px solid #409eff;
+            color: #4052b6;
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin: 0 auto;
+            width: 80%;
+            background-color: #fdfafa;
+            height: 700px;
+        }
+
+        .title {
+            height: 40px;
+            width: 100%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 26px;
+            margin: 15px 0;
+        }
+
+        .author {
+            width: 100%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 10px;
+        }
+
+        .artical p {
+            margin: 10px 0;
+        }
+
+        .artical {
+            width: 90%;
+            height: 400px;
+            background-color: #fff;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        footer {
+            height: 90px;
+            background: #2a2d34;
+            text-align: center;
+        }
+
+        footer p {
+            line-height: 30px;
+            color: #959588;
+            margin: 0 0;
+        }
+
+        .operation {
+            width: 100px;
+            height: 40px;
+            margin: 10px auto;
+            border-radius: 5px;
+            background-color: #4052b6;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .operation:hover {
+            background-color: #1185fa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">校园报修管理系统</div>
+        <div class="title">欢迎使用校园报修管理系统</div>
+        <div class="author">
+            发布人:&nbsp;&nbsp;<span>系统管理员</span>&nbsp;&nbsp;&nbsp;&nbsp;发布时间:&nbsp;&nbsp;<span>2021-6-6</span></div>
+        <div class="artical">
+            <p>亲爱的老师、同学：</p>
+            <p>您于<span id="time">{{param.infordate}}</span>提交的报修申请已移交至校维修站，维修师傅将上门进行维修，请耐心等待。联系电话：13502528065</p>
+        </div>
+    </div>
+    <div class="operation">关闭窗口</div>
+    <footer>
+        <p>珠海科技学院 榕园5栋 638宿舍所有权</p>
+        <p>2021-2022</p>
+        <p>联系电话:13697749577</p>
+    </footer>
+</body>
+<script>
+    var opera = document.querySelector('.operation');
+    var time = document.querySelector("#time").innerText
+    opera.addEventListener('click', function () {
+        var formdata = new FormData();
+        formdata.append('time', time);
+        var xhr = new XMLHttpRequest();
+        xhr.open('post', 'http://localhost/handle/changeuserflag');
+        xhr.send(formdata);
+        xhr.onload = function () {
+            if(xhr.status==200){
+                if(xhr.responseText=='ok'){
+                    window.location="http://localhost/user/shortmessage"
+                }
+            }
+        }
+    })
+</script>
+
+</html>

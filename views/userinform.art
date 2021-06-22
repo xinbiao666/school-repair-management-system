@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title {
+            background-color: #409eff;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .container {
+            margin: 10px auto;
+            width: 80%;
+            height: 600px;
+        }
+
+        .inforhead {
+            width: 100%;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: space-around;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 30px 0;
+            color: #4f81af;
+        }
+
+        .more {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .inner span {
+            margin: 20px 0;
+        }
+
+        .before {
+            font-weight: 550;
+        }
+
+        .after {
+            font-weight: 400;
+        }
+
+        footer {
+            height: 90px;
+            background: #2a2d34;
+            text-align: center;
+        }
+
+        footer p {
+            line-height: 30px;
+            color: #959588;
+            margin: 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <span>用户个人信息</span>
+    </div>
+    <div class="container">
+        <div class="inforhead">
+            <span>学号/工号:&nbsp;&nbsp;&nbsp;{{userinform.userid}}</span>
+            <span>姓名:&nbsp;&nbsp;&nbsp;{{userinform.name}}</span>
+        </div>
+        <div class="more">
+            <span class="inner">
+                <span class="before">学号/工号:&nbsp;&nbsp;&nbsp;<span class="after">{{userinform.userid}}</span></span>
+                <span class="before">性别:&nbsp;&nbsp;&nbsp;<span class="after">{{userinform.gender}}</span></span>
+                <span class="before">证件号码:&nbsp;&nbsp;&nbsp;<span class="after">{{userinform.IDCardNumber}}</span></span>
+                <span class="before">民族:&nbsp;&nbsp;&nbsp;<span class="after">{{userinform.nation}}</span></span>
+                <span class="before">籍贯:&nbsp;&nbsp;&nbsp;<span class="after">{{userinform.native}}</span></span>
+                <span class="before">人员类型:&nbsp;&nbsp;&nbsp;<span class="after">{{userinform.person}}</span></span>
+            </span>
+            <span class="inner">
+                <span class="before">姓名:&nbsp;&nbsp;&nbsp;<span class="after">{{userinform.name}}</span></span>
+                <span class="before">曾用名:&nbsp;&nbsp;&nbsp;<span class="after"></span></span>
+                <span class="before">证件类型:&nbsp;&nbsp;&nbsp;<span class="after">{{userinform.cardtype}}</span></span>
+                <span class="before">政治面貌:&nbsp;&nbsp;&nbsp;<span class="after">{{userinform.political}}</span></span>
+                <span class="before">入学时间:&nbsp;&nbsp;&nbsp;<span class="after">{{userinform.enterDate}}</span></span>
+            </span>
+            <span class="inner">
+                <img src="../public/img/mypicture.png" alt="">
+                <span class="before">出生日期:&nbsp;&nbsp;&nbsp;<span class="after">{{userinform.borndate}}</span></span>
+            </span>
+        </div>
+    </div>
+    <footer>
+        <p>珠海科技学院 榕园5栋 638宿舍所有权</p>
+        <p>2021-2022</p>
+        <p>联系电话:13697749577</p>
+    </footer>
+</body>
+
+</html>
