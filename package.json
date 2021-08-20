@@ -4,7 +4,8 @@
   "dependencies": {
     "express-art-template": "^1.0.1",
     "express-session": "^1.17.2",
-    "formidable": "^1.2.2"
+    "formidable": "^1.2.2",
+    "mongoose": "^5.13.7"
   },
   "devDependencies": {
     "art-template": "^4.13.2",
