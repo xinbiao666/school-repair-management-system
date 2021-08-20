@@ -2,6 +2,7 @@
   "name": "School-repair-management-system",
   "version": "1.0.0",
   "dependencies": {
+    "express-art-template": "^1.0.1",
     "express-session": "^1.17.2",
     "formidable": "^1.2.2"
   },
