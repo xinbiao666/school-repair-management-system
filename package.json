@@ -1,0 +1,12 @@
+{
+  "name": "School-repair-management-system",
+  "version": "1.0.0",
+  "dependencies": {
+    "express-session": "^1.17.2",
+    "formidable": "^1.2.2"
+  },
+  "devDependencies": {
+    "art-template": "^4.13.2",
+    "express": "^4.17.1"
+  }
+}

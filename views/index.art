@@ -158,6 +158,7 @@
             xhr.send(formdata);
             xhr.onload = function () {
                 if (xhr.status == 200) {
+                    console.log(xhr.responseText);
                     if (xhr.responseText == 'ok0') {
                         alert('登录成功!');
                         window.location.replace('http://localhost/user/userindex');
