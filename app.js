@@ -37,6 +37,15 @@ app.use('/user', (req, res, next) => {
     }
 })
 
+app.use('/',(req,res,next)=>{
+    if(req.url!=='/'){
+        next();
+    }else{
+        res.redirect('/home/index')
+    }
+
+})
+
 app.use('/home', home);
 app.use('/user', user);
 app.use('/handle', handle);

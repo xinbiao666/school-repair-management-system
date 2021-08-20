@@ -70,6 +70,7 @@
 
         #log {
             color: red;
+            flex:0.1
         }
 
         textarea {
@@ -95,6 +96,13 @@
             color: #959588;
             margin: 0 0;
         }
+        .dorm-style{
+            display:flex;
+            align-items: center;
+        }
+        .dorm-style input{
+            width:100%;
+        }
     </style>
 </head>
 
@@ -108,8 +116,11 @@
                 <span id="userid">申请人学号/工号:&nbsp;&nbsp;{{userid}}</span>
                 <span id="name">申请人姓名:&nbsp;&nbsp;{{name}}</span>
                 <span id="phonenumber">联系方式:&nbsp;&nbsp;{{phonenumber}} </span>
-                <span><span id="log">*</span>申请人楼宇宿舍:&nbsp;&nbsp;<input type="text" placeholder="如:榕5-638-1"
-                        name="dorm"></span>
+                <span class="dorm-style">
+                    <span id="log">*</span>
+                    <span>申请人楼宇宿舍:</span>
+                    <span><input type="text" placeholder="如:榕5-638-1" name="dorm"></span>
+                </span>
             </div>
             <div class="wrong">
                 <span class="fault">
